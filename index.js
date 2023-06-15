@@ -32,7 +32,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         case 'get':
             try {
                 const contact = await getContactById(id);
-                console.log(contact);
+                console.table(contact);
             } catch (error) {
                 console.log(error.message);
             }
@@ -41,7 +41,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         case 'add':
             try {
                 const newContact = await addContact(name, email, phone);
-                console.log(newContact);
+                console.table(newContact);
             } catch (error) {
                 console.log(error.message);
             }
@@ -50,7 +50,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         case 'remove':
             try {
                 const deletedContact = await removeContact(id);
-                console.log(deletedContact);
+                console.table(deletedContact);
             } catch (error) {
                 console.log(error.message);
             }
